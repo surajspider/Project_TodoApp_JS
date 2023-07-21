@@ -82,7 +82,7 @@
 
 /* Main Content */
 .content {
-    border: 2px solid white;
+    /* border: 2px solid white; */
     height: fit-content;
     margin: auto;
     width: 90%;
@@ -174,7 +174,7 @@
 }
 
 .maincard {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     min-height: 66%;
     margin-bottom: 20%;
 }
