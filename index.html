@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App - JS</title>
+    <script src="https://kit.fontawesome.com/94f3367f70.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="sub">
+            <div class="top">
+                <h1 class="topic"><span id="topic_span">Tasks</span></h1>
+                <h1 class="list">&nbsp;List</h1>
+                <div id="heading_button">
+                    <button id="heading_additem" onclick="additem()">
+                        <h1 class="headerbutton"><span id="plusbutton">+</span>Add Item</h1>
+                    </button>
+                </div>
+            </div>
+            <div class="content">
+                <h2 id="noitems_text">No Items in the TODO List</h2>
+                <!-- <div class="cardcss">
+                    <h1>Trip to Paris</h1>
+                    <hr>
+                    <div class="maincard">
+                        <h2>food <span class="done"><button id="donebut">Mark Done</button></span></h2>
+                    </div>
+                    
+                    <div class="footercard">
+                        <button id="delete">Delete</button>
+                        <button id="new">New</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="addnewlist">
+            <div class="addlistlabeldiv">
+                <label for="addlist" id="addlist_label">
+                    Add New List
+                </label>
+            </div>
+            <input id="addlist" name="addlist" placeholder="Add New List" onfocus="this.value=''">
+            <div class="buttons_addclose">
+                <button id="addbut" onclick="addlist()">Add</button>
+                <button id="closebut" onclick="closec()">Close</button>
+            </div>
+        </div>
+        <div id="logo-img">
+            <img id="logo" src="./download-removebg-preview.png">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

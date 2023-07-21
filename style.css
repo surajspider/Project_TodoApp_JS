@@ -1,0 +1,280 @@
+.main {
+    position: absolute;
+    top: 4.5%;
+    left: 3%;
+    right: 0%;
+    width: 95%;
+}
+
+.sub {
+    background-color: black;
+    display: inline-block;
+    height: 40rem;
+    overflow-y: scroll;
+    width: 100%;
+    /* filter: blur(5px); */
+}
+
+#logo-img {
+    position: relative;
+    left: 80%;
+    width: fit-content;
+    margin: 0;
+}
+
+#logo {
+    width: 90%;
+    height: 72px;
+}
+
+/* top css --- Heading */
+.top {
+    /* border: 2px solid white; */
+    color: white;
+    margin: auto;
+    width: 90%;
+}
+
+.topic {
+    float: left;
+}
+
+#heading_button {
+    float: right;
+    margin-top: 10px;
+}
+
+#heading_additem {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.list {
+    display: inline-block;
+}
+
+#topic_span {
+    font-size: 3rem;
+}
+
+.list {
+    font-size: 2.5rem;
+    font-weight: lighter;
+}
+
+#plusbutton {
+    background-color: rgb(74, 156, 224);
+    border-radius: 50%;
+    padding: 5px 12px 5px 12px;
+
+}
+
+/* Display none and block */
+.displayn {
+    display: none;
+}
+
+.displayb {
+    display: block;
+}
+
+/* Main Content */
+.content {
+    border: 2px solid white;
+    height: fit-content;
+    margin: auto;
+    width: 90%;
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#noitems_text {
+    width: 100%;
+}
+
+/* Add New List container - Page 2 */
+.addnewlist {
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    height: 30%;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+
+    display: none;
+}
+
+.addlistlabeldiv {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+    margin-top: 8%;
+    color: rgb(255, 77, 0);
+}
+
+#addlist {
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 4%;
+    margin-left: 9%;
+    margin-bottom: 4%;
+}
+
+.buttons_addclose {
+    margin: auto;
+    width: fit-content;
+}
+
+#addbut,
+#closebut {
+    padding: 5px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(255, 77, 0);
+    color: white;
+    cursor: pointer;
+}
+
+#addbutdialog {
+    padding: 5px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(255, 77, 0);
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Card css */
+.cardcss {
+    width: 260px;
+    min-height: 23rem;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    color: rgb(255, 77, 0);
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.maincard {
+    border: 2px solid black;
+    min-height: 66%;
+    margin-bottom: 20%;
+}
+
+.footer {
+    position: absolute;
+    right: 3%;
+    bottom: 1.5%;
+    float: right;
+}
+
+.deletecard {
+    background-color: rgb(255, 77, 0);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+}
+
+.additems {
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: large;
+    font-weight: bolder;
+    color: white;
+    margin-left: 10px;
+}
+
+/* Add New item container - Page 3 */
+.addnewitem {
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    height: 30%;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    display: none;
+}
+
+.additemlabeldiv {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+    margin-top: 8%;
+    color: rgb(255, 77, 0);
+}
+
+#additem {
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 4%;
+    margin-left: 9%;
+    margin-bottom: 4%;
+}
+
+.buttons_addclose {
+    margin: auto;
+    width: fit-content;
+}
+
+#addbut,
+#closebut {
+    padding: 5px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(255, 77, 0);
+    color: white;
+    cursor: pointer;
+}
+
+
+.none {
+    display: none;
+}
+
+.items {
+    color: black;
+}
+
+.markdone {
+    text-decoration: line-through;
+    color: red;
+}
+
+.markbut {
+    border-radius: 10px;
+    background-color: rgb(68, 141, 236);
+    color: white;
+    font-size: x-small;
+    margin-left: 10px;
+    border: none;
+    padding: 4px;
+}
