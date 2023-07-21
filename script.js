@@ -5,6 +5,7 @@ var inputelement = 0;
 var counts = 0;
 var maincardss;
 var id = 1;
+var eid = 0;
 function additem() {
     screen.style.filter = "blur(5px)";
     addnewlist.style.display = "block";
@@ -17,7 +18,6 @@ function closec() {
 function addlist() {
     let inputval = document.getElementById("addlist").value;
     let noitems = document.getElementById("noitems_text");
-
     // let content = document.getElementsByClassName("content")[0];
     console.log(inputval);
 
@@ -150,24 +150,36 @@ function addlist() {
 
 }
 function addelements() {
-    var eid = 0;
     var h3 = document.createElement("h3");
     var span1 = document.createElement("span1");
     var span2 = document.createElement("span2");
     var markb = document.createElement("button");
+    var span3 = document.createElement("span3");
+    var deleteele = document.createElement("i");
     span1.setAttribute("id", `eid${eid}`);
     span1.setAttribute("class", "items");
     markb.setAttribute("id", `markb${eid}`);
     markb.setAttribute("class", "markbut");
+    span3.setAttribute("class", "deleteeleicon");
+    deleteele.setAttribute("class", "fa-solid fa-delete-left");
     span1.innerText = inputelement;
     markb.innerText = "Mark Done";
+    eid++;
     maincardss.appendChild(h3);
     h3.appendChild(span1);
     h3.appendChild(span2);
     span2.appendChild(markb);
+    h3.appendChild(span3);
+    span3.appendChild(deleteele);
     markb.addEventListener("click", function (event) {
         span1.classList.add("markdone");
+        span3.style.display = 'none';
         markb.style.display = "none";
+        event.stopPropagation();
+    });
+    deleteele.addEventListener("click", function (event) {
+        h3.remove();
+        event.stopPropagation();
     });
 }
 

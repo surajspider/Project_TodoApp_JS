@@ -278,3 +278,9 @@
     border: none;
     padding: 4px;
 }
+
+.deleteeleicon {
+    position: relative;
+    top: 5px;
+    margin-left: 5px;
+}
