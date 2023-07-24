@@ -284,3 +284,21 @@
     top: 5px;
     margin-left: 5px;
 }
+
+/* 3rd page card details */
+#cardheading {
+    display: inline-block;
+    position: relative;
+    left: 35%;
+    text-align: center;
+    /* border: 2px solid white; */
+}
+
+.cardparent {
+    /* border: 2px solid white; */
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}

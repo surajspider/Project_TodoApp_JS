@@ -3,7 +3,6 @@ let main = document.getElementsByClassName("main")[0];
 let addnewlist = document.getElementsByClassName("addnewlist")[0];
 var inputelement = 0;
 var counts = 0;
-var maincardss;
 var id = 1;
 var eid = 0;
 function additem() {
@@ -30,7 +29,7 @@ function addlist() {
     var deleteb = document.createElement("button");
     var deleteicon = document.createElement("i");
     var additemb = document.createElement("button");
-    let contentss = document.getElementsByClassName("content")[0];
+    var contentss = document.getElementsByClassName("content")[0];
 
     //card id dynamic
     card.setAttribute("id", `card${id}`);
@@ -82,6 +81,34 @@ function addlist() {
         event.stopPropagation();
     });
 
+    //Heading - new page for an individual card
+    heading.addEventListener("click", function (event) {
+        var top = document.getElementsByClassName("top")[0];
+        var topbutton = document.getElementById("headerbuttonlabel");
+        var backicon = document.getElementById("topic_span");
+        var backlabel = document.getElementsByClassName("list")[0];
+        var icontag = document.createElement("i");
+        var cardheading = document.createElement("h1");
+        var cardparent = document.createElement("div");
+        cardparent.setAttribute("class", "cardparent");
+        cardheading.setAttribute("id", "cardheading");
+        icontag.setAttribute("class", "fa-solid fa-arrow-left fa-sm");
+        icontag.style.color = "#ffffff";
+        backicon.innerHTML = "";
+
+        backicon.appendChild(icontag);
+        top.appendChild(cardheading);
+        screen.appendChild(cardparent);
+        cardparent.appendChild(card);
+        topbutton.style.display = "none";
+        backlabel.innerText = "Back";
+        cardheading.innerText = heading.innerHTML;
+        contentss.style.display = "none";
+        card.style.display = "block";
+        event.stopPropagation();
+    });
+
+
 
     //creating dialog box for adding elements into the card
 
@@ -132,9 +159,9 @@ function addlist() {
             screen.style.filter = "blur(0px)";
             addnewlists.remove();
 
-            maincardss = maincard;
+            // maincardss = maincard;
             event.stopPropagation();
-            addelements();
+            addelements(maincard);
 
         });
 
@@ -149,7 +176,7 @@ function addlist() {
 
 
 }
-function addelements() {
+function addelements(maincard) {
     var h3 = document.createElement("h3");
     var span1 = document.createElement("span1");
     var span2 = document.createElement("span2");
@@ -165,7 +192,7 @@ function addelements() {
     span1.innerText = inputelement;
     markb.innerText = "Mark Done";
     eid++;
-    maincardss.appendChild(h3);
+    maincard.appendChild(h3);
     h3.appendChild(span1);
     h3.appendChild(span2);
     span2.appendChild(markb);
