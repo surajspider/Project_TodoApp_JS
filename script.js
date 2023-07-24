@@ -1,6 +1,7 @@
 let screen = document.getElementsByClassName("sub")[0];
 let main = document.getElementsByClassName("main")[0];
 let addnewlist = document.getElementsByClassName("addnewlist")[0];
+let contentalternate = document.getElementsByClassName("contentalternate")[0];
 var inputelement = 0;
 var counts = 0;
 var id = 1;
@@ -83,30 +84,48 @@ function addlist() {
 
     //Heading - new page for an individual card
     heading.addEventListener("click", function (event) {
+        contentss.classList.add("none");
+        contentalternate.style.display = "block";
         var top = document.getElementsByClassName("top")[0];
         var topbutton = document.getElementById("headerbuttonlabel");
         var backicon = document.getElementById("topic_span");
         var backlabel = document.getElementsByClassName("list")[0];
         var icontag = document.createElement("i");
-        var cardheading = document.createElement("h1");
-        var cardparent = document.createElement("div");
-        cardparent.setAttribute("class", "cardparent");
-        cardheading.setAttribute("id", "cardheading");
+        var ccard = document.getElementById("ccard");
+        var chead = document.getElementById("chead");
+        var cardelementmain = document.getElementById("cardelementmain");
         icontag.setAttribute("class", "fa-solid fa-arrow-left fa-sm");
         icontag.style.color = "#ffffff";
         backicon.innerHTML = "";
 
         backicon.appendChild(icontag);
-        top.appendChild(cardheading);
-        screen.appendChild(cardparent);
-        cardparent.appendChild(card);
-        topbutton.style.display = "none";
-        backlabel.innerText = "Back";
-        cardheading.innerText = heading.innerHTML;
-        contentss.style.display = "none";
-        card.style.display = "block";
-        event.stopPropagation();
+        cardelementmain.appendChild(maincard);
+        ccard.appendChild(footer);
+        contentalternate.style.display = "flex";
+
+        // screen.appendChild(cardparent);
+        // cardparent.appendChild(card);
+        // topbutton.style.display = "none";
+        // backlabel.innerText = "Back";
+        chead.innerText = heading.innerHTML;
+        console.log(heading.innerText);
+        contentalternate.style.justifyContent = "center";
+        removeheadingevent(heading);
+
+        // contentss.style.display = "none";
+        // card.style.display = "block";
+        // event.stopPropagation();
+
+        backicon.addEventListener("click", function (event) {
+            contentalternate.style.display = "none";
+            contentss.classList.remove("none");
+            card.appendChild(maincard);
+            card.appendChild(footer);
+            icontag.remove();
+            backicon.innerHTML = "Tasks";
+        })
     });
+
 
 
 
@@ -175,6 +194,11 @@ function addlist() {
 
 
 
+}
+function removeheadingevent(heading) {
+    heading.removeEventListener("click", addlist);
+    console.log(heading);
+    console.log("removed");
 }
 function addelements(maincard) {
     var h3 = document.createElement("h3");
