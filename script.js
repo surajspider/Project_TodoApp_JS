@@ -82,6 +82,7 @@ function addlist() {
         contentalternate.style.display = "none";
         contentss.classList.remove("none");
         console.log("check remove");
+        checkelementspresent(contentss, noitems);
         event.stopPropagation();
     });
 
@@ -201,6 +202,14 @@ function addlist() {
 
 
 
+}
+function checkelementspresent(contentss, noitems) {
+    console.log("length");
+    console.log(contentss.children.length);
+    console.log(noitems);
+    if (contentss.children.length == 1) {
+        noitems.classList.remove("none");
+    }
 }
 function addelements(maincard) {
     var h3 = document.createElement("h3");
