@@ -79,6 +79,9 @@ function addlist() {
     //deletecard function
     deleteb.addEventListener("click", function (event) {
         card.remove();
+        contentalternate.style.display = "none";
+        contentss.classList.remove("none");
+        console.log("check remove");
         event.stopPropagation();
     });
 
@@ -89,6 +92,7 @@ function addlist() {
         var top = document.getElementsByClassName("top")[0];
         var topbutton = document.getElementById("headerbuttonlabel");
         var backicon = document.getElementById("topic_span");
+        var pageheading = document.getElementsByClassName("pageheading")[0];
         var backlabel = document.getElementsByClassName("list")[0];
         var icontag = document.createElement("i");
         var ccard = document.getElementById("ccard");
@@ -97,7 +101,9 @@ function addlist() {
         icontag.setAttribute("class", "fa-solid fa-arrow-left fa-sm");
         icontag.style.color = "#ffffff";
         backicon.innerHTML = "";
-
+        backlabel.innerText = "Back";
+        pageheading.style.visibility = "visible";
+        pageheading.innerHTML = heading.innerHTML;
         backicon.appendChild(icontag);
         cardelementmain.appendChild(maincard);
         ccard.appendChild(footer);
@@ -106,11 +112,10 @@ function addlist() {
         // screen.appendChild(cardparent);
         // cardparent.appendChild(card);
         // topbutton.style.display = "none";
-        // backlabel.innerText = "Back";
+        // backlabel.innerHTML = "Back";
         chead.innerText = heading.innerHTML;
         console.log(heading.innerText);
         contentalternate.style.justifyContent = "center";
-        removeheadingevent(heading);
 
         // contentss.style.display = "none";
         // card.style.display = "block";
@@ -122,7 +127,9 @@ function addlist() {
             card.appendChild(maincard);
             card.appendChild(footer);
             icontag.remove();
+            pageheading.style.visibility = "hidden";
             backicon.innerHTML = "Tasks";
+            backlabel.innerHTML = "lists";
         })
     });
 
@@ -194,11 +201,6 @@ function addlist() {
 
 
 
-}
-function removeheadingevent(heading) {
-    heading.removeEventListener("click", addlist);
-    console.log(heading);
-    console.log("removed");
 }
 function addelements(maincard) {
     var h3 = document.createElement("h3");

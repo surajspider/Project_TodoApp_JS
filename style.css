@@ -30,18 +30,20 @@
 /* top css --- Heading */
 .top {
     /* border: 2px solid white; */
+    display: grid;
     color: white;
     margin: auto;
     width: 90%;
+    grid-template-columns: 15% 70% 15%;
 }
 
-.topic {
+/* .topic {
     float: left;
-}
+} */
 
 #heading_button {
-    float: right;
-    margin-top: 10px;
+    /* float: right; */
+    margin-top: 15px;
 }
 
 #heading_additem {
@@ -51,9 +53,7 @@
     cursor: pointer;
 }
 
-.list {
-    display: inline-block;
-}
+
 
 #topic_span {
     font-size: 3rem;
@@ -100,7 +100,7 @@
 /* Main content - page 2 - Individual Card */
 .contentalternate {
     color: white;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     padding: 10px;
     width: 90%;
     margin: auto;
@@ -298,8 +298,8 @@
 /* 3rd page card details */
 .pageheading {
     text-align: center;
-    border: 2px solid white;
-    margin: 0px 0px 0px 90px;
-    width: 50%;
-    display: inline-block;
+    /* border: 2px solid white; */
+    /* margin: 0px 0px 0px 90px; */
+    /* display: inline-block; */
+    visibility: hidden;
 }
