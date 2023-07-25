@@ -2,6 +2,8 @@ let screen = document.getElementsByClassName("sub")[0];
 let main = document.getElementsByClassName("main")[0];
 let addnewlist = document.getElementsByClassName("addnewlist")[0];
 let contentalternate = document.getElementsByClassName("contentalternate")[0];
+var contentss = document.getElementsByClassName("content")[0];
+var pageheading = document.getElementsByClassName("pageheading")[0];
 var inputelement = 0;
 var counts = 0;
 var id = 1;
@@ -30,7 +32,6 @@ function addlist() {
     var deleteb = document.createElement("button");
     var deleteicon = document.createElement("i");
     var additemb = document.createElement("button");
-    var contentss = document.getElementsByClassName("content")[0];
 
     //card id dynamic
     card.setAttribute("id", `card${id}`);
@@ -93,7 +94,7 @@ function addlist() {
         var top = document.getElementsByClassName("top")[0];
         var topbutton = document.getElementById("headerbuttonlabel");
         var backicon = document.getElementById("topic_span");
-        var pageheading = document.getElementsByClassName("pageheading")[0];
+
         var backlabel = document.getElementsByClassName("list")[0];
         var icontag = document.createElement("i");
         var ccard = document.getElementById("ccard");
@@ -105,22 +106,15 @@ function addlist() {
         backlabel.innerText = "Back";
         pageheading.style.visibility = "visible";
         pageheading.innerHTML = heading.innerHTML;
+        topbutton.classList.add("none");
         backicon.appendChild(icontag);
         cardelementmain.appendChild(maincard);
         ccard.appendChild(footer);
         contentalternate.style.display = "flex";
 
-        // screen.appendChild(cardparent);
-        // cardparent.appendChild(card);
-        // topbutton.style.display = "none";
-        // backlabel.innerHTML = "Back";
         chead.innerText = heading.innerHTML;
         console.log(heading.innerText);
         contentalternate.style.justifyContent = "center";
-
-        // contentss.style.display = "none";
-        // card.style.display = "block";
-        // event.stopPropagation();
 
         backicon.addEventListener("click", function (event) {
             contentalternate.style.display = "none";
@@ -130,7 +124,8 @@ function addlist() {
             icontag.remove();
             pageheading.style.visibility = "hidden";
             backicon.innerHTML = "Tasks";
-            backlabel.innerHTML = "lists";
+            backlabel.innerHTML = "Lists";
+            topbutton.classList.remove("none");
         })
     });
 
@@ -199,10 +194,15 @@ function addlist() {
         });
         event.stopPropagation();
     });
+    console.log(pageheading.style.visibility);
 
-
+    if (pageheading.style.visibility == "visible") {
+        console.log("hellooooo");
+        homepageofcards(contentalternate, contentss);
+    }
 
 }
+//Checking no. of cards to zero. Otherwise print "no items present"
 function checkelementspresent(contentss, noitems) {
     console.log("length");
     console.log(contentss.children.length);
@@ -211,6 +211,7 @@ function checkelementspresent(contentss, noitems) {
         noitems.classList.remove("none");
     }
 }
+//function addelements() - adding elements into the card
 function addelements(maincard) {
     var h3 = document.createElement("h3");
     var span1 = document.createElement("span1");
@@ -244,25 +245,11 @@ function addelements(maincard) {
         event.stopPropagation();
     });
 }
+function homepageofcards(contentalternate, contentss) {
+    contentalternate.style.display = "none";
+    contentss.classList.remove("none");
+}
 
-
-    // <div class="addnewlist">
-    //     <div class="addlistlabeldiv">
-    //         <label for="addlist" id="addlist_label">
-    //             Add New List
-    //         </label>
-    //     </div>
-    //     <input id="addlist" name="addlist" placeholder="Add New List" onfocus="this.value=''">
-    //         <div class="buttons_addclose">
-    //             <button id="addbut" onclick="addlist()">Add</button>
-    //             <button id="closebut" onclick="closec()">Close</button>
-    //         </div>
-    // </div>
-    // var elements = document.querySelectorAll('.content');
-    // var count = elements.length;
-    // counts = count;
-    // console.log(counts);
-    // counts++;
 
 
 
