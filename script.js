@@ -88,6 +88,10 @@ function addlist() {
         contentalternate.style.display = "none";
         contentss.classList.remove("none");
         console.log("check remove");
+        pageheading.style.visibility = "hidden";
+        backicon.innerHTML = "Tasks";
+        backlabel.innerHTML = "Lists";
+        topbutton.classList.remove("none");
         checkelementspresent(contentss, noitems);
         event.stopPropagation();
     });
