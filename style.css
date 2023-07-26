@@ -57,10 +57,11 @@
 
 #topic_span {
     font-size: 3rem;
+    cursor: pointer;
 }
 
 .list {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: lighter;
 }
 
@@ -202,6 +203,7 @@
     height: 40px;
     border-radius: 50%;
     border: none;
+    cursor: pointer;
 }
 
 .additems {
@@ -214,6 +216,7 @@
     font-weight: bolder;
     color: white;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 /* Add New item container - Page 3 */
