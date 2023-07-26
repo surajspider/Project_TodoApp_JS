@@ -84,6 +84,10 @@ function addlist() {
     }
     //deletecard function
     deleteb.addEventListener("click", function (event) {
+        if (pageheading.style.visibility == "visible") {
+            console.log("deletecheck");
+            cardelementmain.children[0].remove();
+        }
         card.remove();
         contentalternate.style.display = "none";
         contentss.classList.remove("none");
@@ -92,6 +96,8 @@ function addlist() {
         backicon.innerHTML = "Tasks";
         backlabel.innerHTML = "Lists";
         topbutton.classList.remove("none");
+        // cardelementmain.remove();
+
         checkelementspresent(contentss, noitems);
         event.stopPropagation();
     });
@@ -99,7 +105,7 @@ function addlist() {
     //Heading - new page for an individual card
     heading.addEventListener("click", function (event) {
         contentss.classList.add("none");
-        contentalternate.style.display = "block";
+        contentalternate.style.display = "flex";
         var top = document.getElementsByClassName("top")[0];
         //print card div
         console.log(heading.parentElement);
