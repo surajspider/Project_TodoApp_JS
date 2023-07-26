@@ -4,10 +4,15 @@ let addnewlist = document.getElementsByClassName("addnewlist")[0];
 let contentalternate = document.getElementsByClassName("contentalternate")[0];
 var contentss = document.getElementsByClassName("content")[0];
 var pageheading = document.getElementsByClassName("pageheading")[0];
+var backicon = document.getElementById("topic_span");
+var backlabel = document.getElementsByClassName("list")[0];
+var topbutton = document.getElementById("headerbuttonlabel");
 var inputelement = 0;
 var counts = 0;
 var id = 1;
 var eid = 0;
+var carddiv;
+var footernew;
 function additem() {
     screen.style.filter = "blur(5px)";
     addnewlist.style.display = "block";
@@ -92,10 +97,9 @@ function addlist() {
         contentss.classList.add("none");
         contentalternate.style.display = "block";
         var top = document.getElementsByClassName("top")[0];
-        var topbutton = document.getElementById("headerbuttonlabel");
-        var backicon = document.getElementById("topic_span");
-
-        var backlabel = document.getElementsByClassName("list")[0];
+        //print card div
+        console.log(heading.parentElement);
+        carddiv = heading.parentElement;
         var icontag = document.createElement("i");
         var ccard = document.getElementById("ccard");
         var chead = document.getElementById("chead");
@@ -111,7 +115,7 @@ function addlist() {
         cardelementmain.appendChild(maincard);
         ccard.appendChild(footer);
         contentalternate.style.display = "flex";
-
+        footernew = footer;
         chead.innerText = heading.innerHTML;
         console.log(heading.innerText);
         contentalternate.style.justifyContent = "center";
@@ -126,7 +130,7 @@ function addlist() {
             backicon.innerHTML = "Tasks";
             backlabel.innerHTML = "Lists";
             topbutton.classList.remove("none");
-        })
+        });
     });
 
 
@@ -198,7 +202,19 @@ function addlist() {
 
     if (pageheading.style.visibility == "visible") {
         console.log("hellooooo");
-        homepageofcards(contentalternate, contentss);
+        contentalternate.style.display = "none";
+        contentss.classList.remove("none");
+        pageheading.style.visibility = "hidden";
+        backicon.innerHTML = "Tasks";
+        backlabel.innerHTML = "Lists";
+        topbutton.classList.remove("none");
+        console.log(cardelementmain);
+        console.log(cardelementmain.children[0]);
+        console.log(cardelementmain.children);
+        carddiv.appendChild(cardelementmain.children[0]);
+        // carddiv.appendChild(footer);
+        // footernew = footer;
+        carddiv.appendChild(footernew);
     }
 
 }
@@ -244,10 +260,6 @@ function addelements(maincard) {
         h3.remove();
         event.stopPropagation();
     });
-}
-function homepageofcards(contentalternate, contentss) {
-    contentalternate.style.display = "none";
-    contentss.classList.remove("none");
 }
 
 
