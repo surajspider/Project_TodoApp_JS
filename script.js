@@ -75,6 +75,7 @@ function addlist() {
 
     //setting values
     heading.innerText = inputval;
+    heading.style.cursor = "pointer";
     //deletecan shake
     deleteb.onmouseover = function () {
         deleteicon.classList.add("fa-shake");
@@ -129,7 +130,7 @@ function addlist() {
         chead.innerText = heading.innerHTML;
         console.log(heading.innerText);
         contentalternate.style.justifyContent = "center";
-
+        backicon.style.cursor = "pointer";
         backicon.addEventListener("click", function (event) {
             contentalternate.style.display = "none";
             contentss.classList.remove("none");

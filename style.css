@@ -57,7 +57,7 @@
 
 #topic_span {
     font-size: 3rem;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .list {
