@@ -34,7 +34,7 @@
     color: white;
     margin: auto;
     width: 90%;
-    grid-template-columns: 17% 68% 15%;
+    grid-template-columns: 25% 55% 20%;
 }
 
 /* .topic {
@@ -305,4 +305,37 @@
     /* margin: 0px 0px 0px 90px; */
     /* display: inline-block; */
     visibility: hidden;
+}
+
+/* Media Query for Tablets */
+@media only screen and (min-width:750px) and (max-width:970px) {
+    .main {
+        width: 93%;
+    }
+
+    .sub {
+        height: 56.5rem;
+    }
+
+    .top {
+        width: 95%;
+        grid-template-columns: 30% 45% 25%;
+    }
+
+    #topic_span {
+        font-size: 2.8rem;
+    }
+
+    .addnewlist {
+
+        width: 40%;
+        height: 20%;
+        position: absolute;
+        top: 25%;
+        left: 30%;
+    }
+
+    .addlistlabeldiv {
+        margin-top: 12%;
+    }
 }
