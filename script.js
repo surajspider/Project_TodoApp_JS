@@ -119,6 +119,7 @@ function addlist() {
         icontag.style.color = "#ffffff";
         backicon.innerHTML = "";
         backlabel.innerText = "Back";
+        pageheading.classList.remove("mobilenone");
         pageheading.style.visibility = "visible";
         pageheading.innerHTML = heading.innerHTML;
         topbutton.classList.add("none");
@@ -137,6 +138,7 @@ function addlist() {
             card.appendChild(maincard);
             card.appendChild(footer);
             icontag.remove();
+            pageheading.classList.add("mobilenone");
             pageheading.style.visibility = "hidden";
             backicon.innerHTML = "Tasks";
             backlabel.innerHTML = "Lists";
