@@ -43,6 +43,7 @@ function addlist() {
     card.classList.add("cardcss");
     //heading id dynamic
     heading.setAttribute("id", `cardheading${id}`);
+    heading.setAttribute("class", "cardheadingclass");
     //maincard id dynamic
     maincard.setAttribute("id", `maincard${id}`);
     maincard.classList.add("maincard");
@@ -115,6 +116,7 @@ function addlist() {
         var ccard = document.getElementById("ccard");
         var chead = document.getElementById("chead");
         var cardelementmain = document.getElementById("cardelementmain");
+        chead.setAttribute("class", "cardheadingclass");
         icontag.setAttribute("class", "fa-solid fa-arrow-left fa-sm");
         icontag.style.color = "#ffffff";
         backicon.innerHTML = "";
